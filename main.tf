@@ -1,3 +1,7 @@
+resource "azurerm_resource_provider_registration" "cloud_test" {
+  name = "Microsoft.CloudTest"
+}
+
 resource "azapi_resource" "image" {
   type                      = "Microsoft.CloudTest/images@2020-05-07"
   name                      = "image-${var.name}"
@@ -23,7 +27,7 @@ resource "azapi_resource" "hosted_pool" {
 
   identity {
     type         = "UserAssigned"
-    identity_ids = [azurerm_user_assigned_identity.hostedpool.id]
+    identity_ids = [var.identity_id]
   }
 
   body = jsonencode({

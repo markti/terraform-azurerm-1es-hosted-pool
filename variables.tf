@@ -28,3 +28,6 @@ variable "vm_image_id" {
 variable "pool_size" {
   type = number
 }
+variable "identity_id" {
+    type = string
+}
