@@ -1,8 +1,8 @@
 resource "azapi_resource" "image" {
   type                      = "Microsoft.CloudTest/images@2020-05-07"
   name                      = "image-${var.name}"
-  parent_id                 = azurerm_resource_group.hostedpool.id
-  location                  = azurerm_resource_group.hostedpool.location
+  parent_id                 = var.resource_group_id
+  location                  = var.location
   schema_validation_enabled = false
 
   body = jsonencode({
@@ -17,8 +17,8 @@ resource "azapi_resource" "image" {
 resource "azapi_resource" "hosted_pool" {
   type                      = "Microsoft.CloudTest/hostedpools@2020-05-07"
   name                      = "pool-${var.name}"
-  parent_id                 = azurerm_resource_group.hostedpool.id
-  location                  = azurerm_resource_group.hostedpool.location
+  parent_id                 = var.resource_group_id
+  location                  = var.location
   schema_validation_enabled = false
 
   identity {
