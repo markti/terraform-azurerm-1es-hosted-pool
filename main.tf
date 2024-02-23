@@ -95,7 +95,7 @@ resource "azapi_resource" "hosted_pool" {
         ]
       }
       networkProfile = {
-        subnetId = azurerm_subnet.azdo.id
+        subnetId = azapi_resource.azdo.id
       }
     }
   })
