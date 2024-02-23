@@ -29,7 +29,7 @@ resource "azapi_resource" "hosted_pool" {
 
   body = jsonencode({
     properties = {
-      organization = "https://dev.azure.com/${var.azdo_organization}"
+      organization = var.azdo_organization
       sku = {
         name = var.vm_size
         tier = "Standard"
