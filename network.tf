@@ -19,7 +19,4 @@ resource "azapi_resource" "azdo" {
       ]
     }
   })
-
-  # the CloudTest resource provider must be registered
-  depends_on = [azurerm_resource_provider_registration.cloud_test]
 }

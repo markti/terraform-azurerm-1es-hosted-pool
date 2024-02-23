@@ -102,7 +102,6 @@ resource "azapi_resource" "hosted_pool" {
   # 1. the CloudTest resource provider must be registered
   # 2. the Virtual Machine Image to use for the Hosted Pool must exist
   depends_on = [
-    azurerm_resource_provider_registration.cloud_test,
     azapi_resource.image
   ]
 }
