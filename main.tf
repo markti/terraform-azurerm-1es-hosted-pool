@@ -1,6 +1,3 @@
-resource "azurerm_resource_provider_registration" "cloud_test" {
-  name = "Microsoft.CloudTest"
-}
 
 resource "azapi_resource" "image" {
   type                      = "Microsoft.CloudTest/images@2020-05-07"
