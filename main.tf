@@ -6,12 +6,12 @@ resource "azapi_resource" "image" {
   location                  = var.location
   schema_validation_enabled = false
 
-  body = jsonencode({
+  body = {
     properties = {
       imageType  = "SharedImageGallery"
       resourceId = var.vm_image_id
     }
-  })
+  }
 }
 
 # We must use the AzAPI provider because this resource is not yet supported by the azurerm provider
@@ -27,7 +27,7 @@ resource "azapi_resource" "hosted_pool" {
     identity_ids = [var.identity_id]
   }
 
-  body = jsonencode({
+  body = {
     properties = {
       organization = var.azdo_organization
       sku = {
@@ -95,7 +95,7 @@ resource "azapi_resource" "hosted_pool" {
         subnetId = azapi_resource.azdo.id
       }
     }
-  })
+  }
 
   # REQUIREMENTS
   # ============

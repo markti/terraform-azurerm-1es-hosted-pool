@@ -7,8 +7,8 @@ variable "azdo_organization" {
 variable "resource_group_name" {
   type = string
 }
-variable resource_group_id {
-    type = string
+variable "resource_group_id" {
+  type = string
 }
 variable "location" {
   type = string
@@ -29,5 +29,5 @@ variable "pool_size" {
   type = number
 }
 variable "identity_id" {
-    type = string
+  type = string
 }
