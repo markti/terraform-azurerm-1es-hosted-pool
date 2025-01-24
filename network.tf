@@ -4,7 +4,7 @@ resource "azapi_resource" "azdo" {
   name      = "snet-azdo"
   parent_id = var.vnet_id
 
-  body = jsonencode({
+  body = {
     properties = {
       addressPrefixes                   = [var.address_space]
       privateEndpointNetworkPolicies    = "Disabled"
@@ -18,5 +18,5 @@ resource "azapi_resource" "azdo" {
         }
       ]
     }
-  })
+  }
 }
